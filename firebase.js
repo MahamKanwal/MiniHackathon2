@@ -2,14 +2,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 
 import {
-  getAnalytics, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail,
-  GoogleAuthProvider, signInWithPopup, updateProfile, signOut
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, 
 }
   from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
   import {
-  getFirestore, collection, addDoc, doc, setDoc, updateDoc, serverTimestamp,
-  getDoc, arrayUnion, getDocs, query, where, orderBy
+    getFirestore,collection, addDoc, deleteDoc, doc, updateDoc
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -21,14 +19,10 @@ const firebaseConfig = {
   appId: "1:11731748989:web:6186bca00593b0840c8914",
   measurementId: "G-FF3RJCNZDY"
 };
-
-
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getFirestore(app);
 
 export {
-  getFirestore, collection, addDoc, doc, setDoc, updateDoc, serverTimestamp, getDoc,
-  arrayUnion, getDocs, query, where, orderBy, analytics, getAuth, createUserWithEmailAndPassword,
-  signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup,
-  updateProfile, signOut
+  getFirestore,getAuth, createUserWithEmailAndPassword,db
+ , signInWithEmailAndPassword, collection, addDoc, deleteDoc, doc, updateDoc,
 };
